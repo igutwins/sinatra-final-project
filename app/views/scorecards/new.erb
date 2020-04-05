@@ -1,11 +1,95 @@
-<h3>Scorecard</h3>
-<form method="POST" action="/login">
+<h3>User's Scorecard for Deal:</h3>
 
-<label for="username">Username:</label>
-<input type="text" name="username" required><br><br>
-
-<label for="password">Password:</label>
-<input type="password" name="password" required><br><br>
-
-<input type="submit" value="Login">
+<!-- Business Criteria -->
+<form method="POST" action="/scorecard">
+<table>
+    <tr>
+        <th></th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+    </tr>
+    <tr>
+        <td><label for="franchise_rating">Franchise Value:</label>
+        <td><input type="radio" name="franchise_rating" value="1" id="fr1"/></td>
+        <td><input type="radio" name="franchise_rating" value="2" id="fr2"/></td>
+        <td><input type="radio" name="franchise_rating" value="3" id="fr3" disabled /></td>
+        <td><input type="radio" name="franchise_rating" value="4" id="fr4"/></td>
+        <td><input type="radio" name="franchise_rating" value="5" id="fr5"/></td>
+    </tr>
+    <tr>
+        <td><label for="market_rating">Market Attractiveness / Competitive Landscape:</label>
+        <td><input type="radio" name="market_rating" value="1" id="ma1"/></td>
+        <td><input type="radio" name="market_rating" value="2" id="ma2"/></td>
+        <td><input type="radio" name="market_rating" value="3" id="ma3" disabled/></td>
+        <td><input type="radio" name="market_rating" value="4" id="ma4"/></td>
+        <td><input type="radio" name="market_rating" value="5" id="ma5"/></td>
+    </tr>
+    <tr>
+        <td><label for="competition_rating">Competitive Advantage / Barriers to Entry:</label>
+        <td><input type="radio" name="competition_rating" value="1" id="ca1"/></td>
+        <td><input type="radio" name="competition_rating" value="2" id="ca2"/></td>
+        <td><input type="radio" name="competition_rating" value="3" id="ca3" disabled /></td>
+        <td><input type="radio" name="competition_rating" value="4" id="ca4"/></td>
+        <td><input type="radio" name="competition_rating" value="5" id="ca5"/></td>
+    </tr>
+    <tr>
+        <td><label for="customer_rating">Bargaining Power vs. Customers:</label>
+        <td><input type="radio" name="customer_rating" value="1" id="cp1"/></td>
+        <td><input type="radio" name="customer_rating" value="2" id="cp2"/></td>
+        <td><input type="radio" name="customer_rating" value="3" id="cp3" disabled /></td>
+        <td><input type="radio" name="customer_rating" value="4" id="cp4"/></td>
+        <td><input type="radio" name="customer_rating" value="5" id="cp5"/></td>
+    </tr>
+    <tr>
+        <td><label for="supplier_rating">Bargaining Power vs. Suppliers:</label>
+        <td><input type="radio" name="supplier_rating" value="1" id="sr1"/></td>
+        <td><input type="radio" name="supplier_rating" value="2" id="sr2"/></td>
+        <td><input type="radio" name="supplier_rating" value="3" id="sr3" disabled /></td>
+        <td><input type="radio" name="supplier_rating" value="4" id="sr4"/></td>
+        <td><input type="radio" name="supplier_rating" value="5" id="sr5"/></td>
+    </tr>
+    <tr>
+        <td><label for="growth_rating">Organic Growth Prospects:</label>
+        <td><input type="radio" name="growth_rating" value="1" id="gr1"/></td>
+        <td><input type="radio" name="growth_rating" value="2" id="gr2"/></td>
+        <td><input type="radio" name="growth_rating" value="3" id="gr3" disabled /></td>
+        <td><input type="radio" name="growth_rating" value="4" id="gr4"/></td>
+        <td><input type="radio" name="growth_rating" value="5" id="gr5"/></td>
+    </tr>
+    <tr>
+        <td><label for="cycle_rating">Cyclicality:</label>
+        <td><input type="radio" name="cycle_rating" value="1" id="cr1"/></td>
+        <td><input type="radio" name="cycle_rating" value="2" id="cr2"/></td>
+        <td><input type="radio" name="cycle_rating" value="3" id="cr3" disabled /></td>
+        <td><input type="radio" name="cycle_rating" value="4" id="cr4"/></td>
+        <td><input type="radio" name="cycle_rating" value="5" id="cr5"/></td>
+    </tr>
+    <tr>
+        <td><label for="management_rating">Management Team:</label>
+        <td><input type="radio" name="management_rating" value="1" id="mr1"/></td>
+        <td><input type="radio" name="management_rating" value="2" id="mr2"/></td>
+        <td><input type="radio" name="management_rating" value="3" id="mr3" disabled /></td>
+        <td><input type="radio" name="management_rating" value="4" id="mr4"/></td>
+        <td><input type="radio" name="management_rating" value="5" id="mr5"/></td>
+    </tr>
+</table>
+<br>
+<!-- Go / No-Go -->
+<table>
+    <tr>
+        <th></th>
+        <th>Go</th>
+        <th>No-Go</th>
+    </tr>
+    <tr>
+        <td>Go / No-Go</td>
+        <td><input type="checkbox" name="go-no-go" value="go"/></td>
+        <td><input type="checkbox" name="go-no-go" value="no-go"/></td>
+    </tr>
+</table>
+<br>
+<input type="submit" value="Submit Response">
 </form>

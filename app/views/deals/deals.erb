@@ -1,0 +1,11 @@
+<h3>User's Deals:</h3>
+
+<h4>Deals Requiring Evaluation:</h4>
+
+<ol>
+<% @deals.each do |x| %>
+    <li><a href="/scorecard/new/<%=x.id%>"><%= x.name %><a></li>
+<% end %>
+</ol>
+
+<h4>Previously Evaluated Deals:</h4>
