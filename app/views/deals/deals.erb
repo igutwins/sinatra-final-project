@@ -21,6 +21,6 @@
 
 <ol>
 <% @completed_deals.each do |x| %>
-    <li><a href="/scorecard/edit/<%=@user.username%>/<%=x.name%>"><%= x.name %><a></li>
+    <li><a href="/scorecard/<%=@user.username%>/<%=x.name%>/edit"><%= x.name %><a></li>
 <% end %>
 </ol>

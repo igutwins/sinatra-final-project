@@ -15,9 +15,11 @@ class ScorecardsController < ApplicationController
     end 
 
     get '/scorecard/:username/:name/edit' do
-        @user = current_user
+        binding.pry
         @deal = Deal.find_by(:name => params[:name])
-        erb :'/scorecards/new'
+        @user = current_user
+        @scorecard = Scorecard.find_by(:user_id => @user.id, :deal_id => @deal.id)
+        erb :'/scorecards/edit'
     end
 
     patch '/scorecard/:username/:name' do
