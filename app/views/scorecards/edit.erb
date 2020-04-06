@@ -1,7 +1,7 @@
-<h3><%=@user.username%>'s Scorecard for <%=@deal.name%>:</h3>
+<h3>Edit <%=@user.username%>'s Scorecard for <%=@deal.name%>:</h3>
 
 <!-- Business Criteria -->
-<form method="POST" action="/scorecard">
+<form method="POST" action="/scorecard/<%=@user.username%>/<%=@deal.name">
 <input type="hidden" name="deal_id" value="<%=@deal.id%>">
 <table>
     <tr>
