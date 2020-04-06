@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_04_04_223037) do
     t.integer "growth_rating"
     t.integer "cycle_rating"
     t.integer "management_rating"
-    t.integer "go_rating"
+    t.string "go_rating"
     t.integer "deal_id"
     t.integer "user_id"
   end

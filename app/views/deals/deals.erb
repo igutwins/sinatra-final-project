@@ -9,18 +9,21 @@
 <% @completed_deals = Deal.all.find_all {|x| @scorecards.find{|i| i.deal_id == x.id} } %>
 <% @deals_remaining = Deal.all - @completed_deals %>
 
-<h4>Deals Requiring Evaluation:</h4>
-
+<b><u><p>Deals Requiring Evaluation</p></u></b>
+<i><p>click to evaluate:</p></i>
 <ol>
 <% @deals_remaining.each do |x| %>
-    <li><a href="/scorecard/new/<%=@user.username%>/<%=x.name%>"><%= x.name %><a></li>
+    <li><a href="/scorecard/<%=@user.username%>/<%=x.name%>/new"><%= x.name %><a></li>
 <% end %>
 </ol>
-
-<h4>Previously Evaluated Deals:</h4>
+<br>
+<b><u><p>Previously Evaluated Deals</p></u></b>
+<i><p>click to view and/or edit:</p></i>
 
 <ol>
 <% @completed_deals.each do |x| %>
-    <li><a href="/scorecard/<%=@user.username%>/<%=x.name%>/edit"><%= x.name %><a></li>
+    <li><a href="/scorecard/<%=@user.username%>/<%=x.name%>"><%= x.name %><a></li>
 <% end %>
 </ol>
+<br>
+<br>

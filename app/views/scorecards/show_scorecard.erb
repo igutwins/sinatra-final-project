@@ -1,0 +1,58 @@
+<h3><%=@user.username%>'s Scorecard for <%=@deal.name%>:</h3>
+
+<!-- Business Criteria -->
+<table>
+    <tr>
+        <th></th>
+        <th>Your Rating</th>
+    </tr>
+    <tr>
+        <td><label for="franchise_rating">Franchise Value:</label>
+        <td><%=@scorecard.franchise_rating%></td>
+    </tr>
+    <tr>
+        <td><label for="market_rating">Market Attractiveness / Competitive Landscape:</label>
+        <td><%=@scorecard.market_rating%></td>
+    </tr>
+    <tr>
+        <td><label for="competition_rating">Competitive Advantage / Barriers to Entry:</label>
+        <td><%=@scorecard.competition_rating%></td>
+    </tr>
+    <tr>
+        <td><label for="customer_rating">Bargaining Power vs. Customers:</label>
+        <td><%=@scorecard.customer_rating%></td>
+    </tr>
+    <tr>
+        <td><label for="supplier_rating">Bargaining Power vs. Suppliers:</label>
+        <td><%=@scorecard.supplier_rating%></td>
+    </tr>
+    <tr>
+        <td><label for="growth_rating">Organic Growth Prospects:</label>
+        <td><%=@scorecard.growth_rating%></td>
+    </tr>
+    <tr>
+        <td><label for="cycle_rating">Cyclicality:</label>
+        <td><%=@scorecard.cycle_rating%></td>
+    </tr>
+    <tr>
+        <td><label for="management_rating">Management Team:</label>
+        <td><%=@scorecard.management_rating%></td>
+    </tr>
+</table>
+<br>
+<!-- Go / No-Go -->
+<table>
+    <tr>
+        <th></th>
+        <th>Decision</th>
+    </tr>
+    <tr>
+        <td>Go / No-Go</td>
+        <td><%=@scorecard.go_rating%></td>
+    </tr>
+</table>
+<br>
+<a href="/scorecard/<%=@user.username%>/<%=@deal.name%>/edit"><button type="button">Edit Scorecard</button></a>
+<br>
+<br>
+

@@ -9,7 +9,7 @@
 <footer>
 <a href="/">Home</a>
 <% if logged_in? %>
-    | Hi <%=current_user.username%> | <a href="/logout"> | Logout</a>
+    | Hi <%=current_user.username%> | <a href="/users/<%=current_user.username%>">Deals</a> | <a href="/logout">Logout</a>
 <% end %>
 
 </footer>

@@ -1,7 +1,8 @@
 <h3>Edit <%=@user.username%>'s Scorecard for <%=@deal.name%>:</h3>
 
 <!-- Business Criteria -->
-<form method="POST" action="/scorecard/<%=@user.username%>/<%=@deal.name">
+<form method="POST" action="/scorecard/<%=@user.username%>/<%=@deal.name%>">
+<input type="hidden" id="hidden" name="_method" value="PATCH">
 <input type="hidden" name="deal_id" value="<%=@deal.id%>">
 <table>
     <tr>
@@ -14,67 +15,67 @@
     </tr>
     <tr>
         <td><label for="franchise_rating">Franchise Value:</label>
-        <td><input type="radio" name="franchise_rating" value="1" id="fr1"/></td>
-        <td><input type="radio" name="franchise_rating" value="2" id="fr2"/></td>
+        <td><input type="radio" name="franchise_rating" value="1" id="fr1" <%= 'checked' if @scorecard.franchise_rating == 1 %>/></td>
+        <td><input type="radio" name="franchise_rating" value="2" id="fr2" <%= 'checked' if @scorecard.franchise_rating == 2 %>/></td>
         <td><input type="radio" name="franchise_rating" value="3" id="fr3" disabled /></td>
-        <td><input type="radio" name="franchise_rating" value="4" id="fr4"/></td>
-        <td><input type="radio" name="franchise_rating" value="5" id="fr5"/></td>
+        <td><input type="radio" name="franchise_rating" value="4" id="fr4" <%= 'checked' if @scorecard.franchise_rating == 4 %>/></td>
+        <td><input type="radio" name="franchise_rating" value="5" id="fr5" <%= 'checked' if @scorecard.franchise_rating == 5 %>/></td>
     </tr>
     <tr>
         <td><label for="market_rating">Market Attractiveness / Competitive Landscape:</label>
-        <td><input type="radio" name="market_rating" value="1" id="ma1"/></td>
-        <td><input type="radio" name="market_rating" value="2" id="ma2"/></td>
+        <td><input type="radio" name="market_rating" value="1" id="ma1" <%= 'checked' if @scorecard.market_rating == 1 %>/></td>
+        <td><input type="radio" name="market_rating" value="2" id="ma2" <%= 'checked' if @scorecard.market_rating == 2 %>/></td>
         <td><input type="radio" name="market_rating" value="3" id="ma3" disabled/></td>
-        <td><input type="radio" name="market_rating" value="4" id="ma4"/></td>
-        <td><input type="radio" name="market_rating" value="5" id="ma5"/></td>
+        <td><input type="radio" name="market_rating" value="4" id="ma4" <%= 'checked' if @scorecard.market_rating == 4 %>/></td>
+        <td><input type="radio" name="market_rating" value="5" id="ma5" <%= 'checked' if @scorecard.market_rating == 5 %>/></td>
     </tr>
     <tr>
         <td><label for="competition_rating">Competitive Advantage / Barriers to Entry:</label>
-        <td><input type="radio" name="competition_rating" value="1" id="ca1"/></td>
-        <td><input type="radio" name="competition_rating" value="2" id="ca2"/></td>
+        <td><input type="radio" name="competition_rating" value="1" id="ca1" <%= 'checked' if @scorecard.competition_rating == 1 %>/></td>
+        <td><input type="radio" name="competition_rating" value="2" id="ca2" <%= 'checked' if @scorecard.competition_rating == 2 %>/></td>
         <td><input type="radio" name="competition_rating" value="3" id="ca3" disabled /></td>
-        <td><input type="radio" name="competition_rating" value="4" id="ca4"/></td>
-        <td><input type="radio" name="competition_rating" value="5" id="ca5"/></td>
+        <td><input type="radio" name="competition_rating" value="4" id="ca4" <%= 'checked' if @scorecard.competition_rating == 4 %>/></td>
+        <td><input type="radio" name="competition_rating" value="5" id="ca5" <%= 'checked' if @scorecard.competition_rating == 5 %>/></td>
     </tr>
     <tr>
         <td><label for="customer_rating">Bargaining Power vs. Customers:</label>
-        <td><input type="radio" name="customer_rating" value="1" id="cp1"/></td>
-        <td><input type="radio" name="customer_rating" value="2" id="cp2"/></td>
+        <td><input type="radio" name="customer_rating" value="1" id="cp1" <%= 'checked' if @scorecard.customer_rating == 1 %>/></td>
+        <td><input type="radio" name="customer_rating" value="2" id="cp2" <%= 'checked' if @scorecard.customer_rating == 2 %>/></td>
         <td><input type="radio" name="customer_rating" value="3" id="cp3" disabled /></td>
-        <td><input type="radio" name="customer_rating" value="4" id="cp4"/></td>
-        <td><input type="radio" name="customer_rating" value="5" id="cp5"/></td>
+        <td><input type="radio" name="customer_rating" value="4" id="cp4" <%= 'checked' if @scorecard.customer_rating == 4 %>/></td>
+        <td><input type="radio" name="customer_rating" value="5" id="cp5" <%= 'checked' if @scorecard.customer_rating == 5 %>/></td>
     </tr>
     <tr>
         <td><label for="supplier_rating">Bargaining Power vs. Suppliers:</label>
-        <td><input type="radio" name="supplier_rating" value="1" id="sr1"/></td>
-        <td><input type="radio" name="supplier_rating" value="2" id="sr2"/></td>
+        <td><input type="radio" name="supplier_rating" value="1" id="sr1" <%= 'checked' if @scorecard.supplier_rating == 1 %>/></td>
+        <td><input type="radio" name="supplier_rating" value="2" id="sr2" <%= 'checked' if @scorecard.supplier_rating == 2 %>/></td>
         <td><input type="radio" name="supplier_rating" value="3" id="sr3" disabled /></td>
-        <td><input type="radio" name="supplier_rating" value="4" id="sr4"/></td>
-        <td><input type="radio" name="supplier_rating" value="5" id="sr5"/></td>
+        <td><input type="radio" name="supplier_rating" value="4" id="sr4" <%= 'checked' if @scorecard.supplier_rating == 4 %>/></td>
+        <td><input type="radio" name="supplier_rating" value="5" id="sr5" <%= 'checked' if @scorecard.supplier_rating == 5 %>/></td>
     </tr>
     <tr>
         <td><label for="growth_rating">Organic Growth Prospects:</label>
-        <td><input type="radio" name="growth_rating" value="1" id="gr1"/></td>
-        <td><input type="radio" name="growth_rating" value="2" id="gr2"/></td>
+        <td><input type="radio" name="growth_rating" value="1" id="gr1" <%= 'checked' if @scorecard.growth_rating == 1 %>/></td>
+        <td><input type="radio" name="growth_rating" value="2" id="gr2" <%= 'checked' if @scorecard.growth_rating == 2 %>/></td>
         <td><input type="radio" name="growth_rating" value="3" id="gr3" disabled /></td>
-        <td><input type="radio" name="growth_rating" value="4" id="gr4"/></td>
-        <td><input type="radio" name="growth_rating" value="5" id="gr5"/></td>
+        <td><input type="radio" name="growth_rating" value="4" id="gr4" <%= 'checked' if @scorecard.growth_rating == 4 %>/></td>
+        <td><input type="radio" name="growth_rating" value="5" id="gr5" <%= 'checked' if @scorecard.growth_rating == 5 %>/></td>
     </tr>
     <tr>
         <td><label for="cycle_rating">Cyclicality:</label>
-        <td><input type="radio" name="cycle_rating" value="1" id="cr1"/></td>
-        <td><input type="radio" name="cycle_rating" value="2" id="cr2"/></td>
+        <td><input type="radio" name="cycle_rating" value="1" id="cr1" <%= 'checked' if @scorecard.cycle_rating == 1 %>/></td>
+        <td><input type="radio" name="cycle_rating" value="2" id="cr2" <%= 'checked' if @scorecard.cycle_rating == 2 %>/></td>
         <td><input type="radio" name="cycle_rating" value="3" id="cr3" disabled /></td>
-        <td><input type="radio" name="cycle_rating" value="4" id="cr4"/></td>
-        <td><input type="radio" name="cycle_rating" value="5" id="cr5"/></td>
+        <td><input type="radio" name="cycle_rating" value="4" id="cr4" <%= 'checked' if @scorecard.cycle_rating == 4 %>/></td>
+        <td><input type="radio" name="cycle_rating" value="5" id="cr5" <%= 'checked' if @scorecard.cycle_rating == 5 %>/></td>
     </tr>
     <tr>
         <td><label for="management_rating">Management Team:</label>
-        <td><input type="radio" name="management_rating" value="1" id="mr1"/></td>
-        <td><input type="radio" name="management_rating" value="2" id="mr2"/></td>
+        <td><input type="radio" name="management_rating" value="1" id="mr1" <%= 'checked' if @scorecard.management_rating == 1 %>/></td>
+        <td><input type="radio" name="management_rating" value="2" id="mr2" <%= 'checked' if @scorecard.management_rating == 2 %>/></td>
         <td><input type="radio" name="management_rating" value="3" id="mr3" disabled /></td>
-        <td><input type="radio" name="management_rating" value="4" id="mr4"/></td>
-        <td><input type="radio" name="management_rating" value="5" id="mr5"/></td>
+        <td><input type="radio" name="management_rating" value="4" id="mr4" <%= 'checked' if @scorecard.management_rating == 4 %>/></td>
+        <td><input type="radio" name="management_rating" value="5" id="mr5" <%= 'checked' if @scorecard.management_rating == 5 %>/></td>
     </tr>
 </table>
 <br>
@@ -87,11 +88,11 @@
     </tr>
     <tr>
         <td>Go / No-Go</td>
-        <td><input type="radio" name="go_rating" value="go"/></td>
-        <td><input type="radio" name="go_rating" value="no-go"/></td>
+        <td><input type="radio" name="go_rating" value="go" <%= 'checked' if @scorecard.go_rating == "go" %>/></td>
+        <td><input type="radio" name="go_rating" value="no-go" <%= 'checked' if @scorecard.go_rating == "no-go" %>/></td>
     </tr>
 </table>
 <br>
-<input type="submit" value="Submit Response">
+<input type="submit" value="Update Response">
 <br><br>
 </form>

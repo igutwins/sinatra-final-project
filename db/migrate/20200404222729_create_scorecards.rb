@@ -9,7 +9,7 @@ class CreateScorecards < ActiveRecord::Migration[6.0]
       t.integer :growth_rating
       t.integer :cycle_rating
       t.integer :management_rating
-      t.integer :go_rating
+      t.string :go_rating
       t.integer :deal_id
       t.integer :user_id
     end 
