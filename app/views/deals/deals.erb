@@ -4,7 +4,6 @@
 <a href="/deals/new"><button type="button">Add Deal</button></a>
 <% end %>
 
-test
 
 <% @scorecards = @user.scorecards %>
 <% @completed_deals = Deal.all.find_all {|x| @scorecards.find{|i| i.deal_id == x.id} } %>
