@@ -1,0 +1,13 @@
+<h3>All Deals</h3>
+
+<ol>
+<% @deals.each do |x| %>
+    <li><form method="post" action="/deals/<%=x.id%>/delete">
+    <input type="hidden" id="hidden" name="_method" value="delete">
+    <input id="submit" type="submit" value="Delete <%=x.name%>">
+    </form></li>
+    <br>
+<% end %>
+</ol>
+
+

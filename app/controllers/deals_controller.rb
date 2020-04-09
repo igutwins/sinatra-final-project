@@ -1,25 +1,44 @@
 class DealsController < ApplicationController
-    
-    get '/deals' do
-        @user = current_user
-        @deals = Deal.all
-        erb :'/deals/deals'
-    end
 
     get '/deals/new' do
-        erb :'/deals/new'
+        if current_user.username == "igutwins" && User.find_by(:username => "igutwins").authenticate(params[:password])
+            erb :'/deals/new'
+        else 
+            redirect to "/deals/#{current_user.username}"
+        end 
     end
 
     post '/deals' do
         @deal = Deal.new(:name => params[:name])
         @deal.save
-        redirect to '/deals'
+        redirect to "/deals/#{current_user.username}"
     end
 
+    get '/deals/remove' do
+        if current_user.username == "igutwins" && User.find_by(:username => "igutwins").authenticate(params[:password])
+            @deals = Deal.all
+            erb :'/deals/delete'
+        else
+            redirect to "/deals/#{current_user.username}"
+        end 
+    end 
+
     get '/deals/:username' do
-        @user = User.find_by(:username => params[:username])
-        @deals = Deal.all
-        erb :'/deals/deals'
+        if current_user.username == params[:username]
+            @user = User.find_by(:username => params[:username])
+            @deals = Deal.all
+            erb :'/deals/deals'
+        else
+            redirect to "/deals/#{current_user.username}"
+        end 
     end
+
+    delete '/deals/:id/delete' do
+        @deal = Deal.find_by_id(params[:id])
+        if @deal && current_user.username == "igutwins" && User.find_by(:username => "igutwins").authenticate(params[:password])
+            @deal.delete
+        end
+        redirect to "/deals/#{current_user.username}"  
+    end 
 
 end 

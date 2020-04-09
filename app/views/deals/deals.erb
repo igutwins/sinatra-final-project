@@ -2,6 +2,7 @@
 
 <% if current_user.username == "igutwins" %>
 <a href="/deals/new"><button type="button">Add Deal</button></a>
+<a href="/deals/remove"><button type="button">Remove Deal</button></a>
 <% end %>
 
 
@@ -10,10 +11,14 @@
 <% @deals_remaining = Deal.all - @completed_deals %>
 
 <b><u><p>Deals Requiring Evaluation</p></u></b>
-<i><p>click to evaluate:</p></i>
+<% if @deals_remaining.empty? %>
+<i><p>you have no deals left to evaluate</p></i>
 <ol>
+<% else %>
+<i><p>click to evaluate:</p></i>
 <% @deals_remaining.each do |x| %>
     <li><a href="/scorecard/<%=@user.username%>/<%=x.name%>/new"><%= x.name %><a></li>
+<% end %>
 <% end %>
 </ol>
 <br>
@@ -27,3 +32,4 @@
 </ol>
 <br>
 <br>
+
