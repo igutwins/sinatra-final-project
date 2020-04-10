@@ -1,6 +1,8 @@
 # sinatra-final-project
 IC Sentiment Tracking Tool
 
+To run this program, clone and download the repository, run "bundle install" in your terminal, and use "shotgun" to view the app on localhost:9393. 
+
 Purpose: 
 
 For Investment Committee members at a Private Equity firm to document their views on an investment's merits. 
@@ -29,3 +31,5 @@ This app uses three models: (1) Users, (2) Scorecards, and (3) Deals. Their inte
 
 These relationships exist because all Investment Committee members ("Users") would be required to evaluate each investment ("Deal") proposed. Further, many
 Deals are evaluated over time, each requiring a Scorecard to be filled in by each User.  
+
+The gem is available as open source under the terms of the MIT License.
