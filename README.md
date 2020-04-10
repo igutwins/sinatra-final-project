@@ -18,3 +18,14 @@ Seed Data:
 
 The database is seeded with ten deals requiring evaluation, and 2 users, joanne and igutwins. As mentioned above, igutwins is the admin user and joanne is a 
 regular user without special permissions. Both passwords are set to "password" so Flatiron instructors can use the program and the administrator functionality.
+
+Model Relationships:
+
+This app uses three models: (1) Users, (2) Scorecards, and (3) Deals. Their interrelationships are as follows:
+
+    1) A User has_many Scorecards and has_many Deals through Scorecards.
+    2) A Scorecard belongs_to a User and belongs_to a Deal.
+    3) A Deal has_many Scorecards and has_many Users through Scorecards.
+
+These relationships exist because all Investment Committee members ("Users") would be required to evaluate each investment ("Deal") proposed. Further, many
+Deals are evaluated over time, each requiring a Scorecard to be filled in by each User.  
