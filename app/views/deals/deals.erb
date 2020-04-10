@@ -13,9 +13,9 @@
 <b><u><p>Deals Requiring Evaluation</p></u></b>
 <% if @deals_remaining.empty? %>
 <i><p>you have no deals left to evaluate</p></i>
-<ol>
 <% else %>
 <i><p>click to evaluate:</p></i>
+<ol>
 <% @deals_remaining.each do |x| %>
     <li><a href="/scorecard/<%=@user.username%>/<%=x.name%>/new"><%= x.name %><a></li>
 <% end %>
