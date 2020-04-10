@@ -1,7 +1,7 @@
 class DealsController < ApplicationController
 
     get '/deals/new' do
-        if current_user.username == "igutwins" && User.find_by(:username => "igutwins").authenticate(params[:password])
+        if current_user.username == "igutwins"
             erb :'/deals/new'
         else 
             redirect to "/deals/#{current_user.username}"
@@ -15,7 +15,7 @@ class DealsController < ApplicationController
     end
 
     get '/deals/remove' do
-        if current_user.username == "igutwins" && User.find_by(:username => "igutwins").authenticate(params[:password])
+        if current_user.username == "igutwins"
             @deals = Deal.all
             erb :'/deals/delete'
         else
@@ -35,7 +35,7 @@ class DealsController < ApplicationController
 
     delete '/deals/:id/delete' do
         @deal = Deal.find_by_id(params[:id])
-        if @deal && current_user.username == "igutwins" && User.find_by(:username => "igutwins").authenticate(params[:password])
+        if @deal && current_user.username == "igutwins"
             @deal.delete
         end
         redirect to "/deals/#{current_user.username}"  
